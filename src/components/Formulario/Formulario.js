@@ -1,5 +1,6 @@
 import "./Formulario.css"
 import Campo from "../CampoName/Campo"
+import ListaOpc from "../ListaOpc"
 const formulario=()=>{
    return <section className="formulario">
         <form>
@@ -7,6 +8,7 @@ const formulario=()=>{
             <Campo titulo="Nombre" sub="Ingrese el Nombre"/>
             <Campo titulo="Puesto" sub="Ingrese el Puestp"/>
             <Campo titulo="Foto" sub="Ingrese el link de la Foto"/>
+            <ListaOpc/>
         </form>
    </section>
 }
