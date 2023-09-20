@@ -1,6 +1,6 @@
 import './ListaOpc.css'
 
-const ListaOpc=()=>{
+const ListaOpc=(props)=>{
    
     //Metodo map ==> arreglo.map( (equipo,index)=>{
     //
@@ -14,9 +14,13 @@ const ListaOpc=()=>{
         'Movil',
         'Inovacion y gestion'
     ]
+    const manejarCambio=(e)=>{
+        props.setEquipo(e.target.value)
+    }
     return <div className='listaOpc'>
         <label>EQUIPOS</label>
-        <select>
+        <select value={props.valor} onChange={manejarCambio}>
+            <option value="" disabled defaultValue="" hidden>Seleconar Equipo</option>
             {equipos.map((equipo,posicion)=><option key={posicion}>{equipo}</option>)}
         </select>
     </div>
