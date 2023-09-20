@@ -21,7 +21,7 @@ const ListaOpc=(props)=>{
         <label>EQUIPOS</label>
         <select value={props.valor} onChange={manejarCambio}>
             <option value="" disabled defaultValue="" hidden>Seleconar Equipo</option>
-            {equipos.map((equipo,posicion)=><option key={posicion}>{equipo}</option>)}
+            {equipos.map((equipo,posicion)=><option  key={posicion}>{equipo}</option>)}
         </select>
     </div>
 }
