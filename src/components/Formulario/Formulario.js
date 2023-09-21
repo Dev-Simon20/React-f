@@ -9,6 +9,9 @@ const Formulario=(props)=>{
     const [foto,setFoto]=useState('')
     const [equipo,setEquipo]=useState('');
 
+    /*Deestructurando el props */
+    const {registrarColaborador}=props
+
     const manejarEnvio=(e)=>{
         e.preventDefault();
         let datoEnviar={
@@ -19,6 +22,7 @@ const Formulario=(props)=>{
         }
         console.log('equipo',equipo);
         console.log(datoEnviar);
+        registrarColaborador(datoEnviar);
     }
     // const [mostrarForm,actualizarMostrar]=useState(true)
 

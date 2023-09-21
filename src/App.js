@@ -4,13 +4,22 @@ import Header from './components/header/header';
 import Formulario from './components/Formulario/Formulario';
 import Miorg from './components/MiOrg';
 import Equipo from './components/Equipo';
+import Footer from './components/Footer';
 
 
 function App() {
   const [mostrarForm,actualizarMostrar]=useState(false)
+  const [colaboradores,setColaborador]=useState([]);
   const manejarEstado=()=>{
         actualizarMostrar(!mostrarForm)
     }
+
+    const registrarColaborador=(colaborador)=>{
+      console.log("Manejando del envioNuevo Colaborador",colaborador);
+      //Spread operator
+      setColaborador([...colaboradores,colaborador]);
+    }
+
 
     //Lista de equipos
     const equipos=[
@@ -50,14 +59,27 @@ function App() {
         colorSec:"#ffeedf"
       }
   ]
-
+   
   return (
     <div>
       <Header/>
-      {mostrarForm?<Formulario equipos={equipos.map((equip)=>equip.titulo)}/>:<></>}
-      {/* Se manda la funcion manejar estado para que añ hacer click cambie el valor de mostrar form */}
+      {
+      mostrarForm&&<Formulario 
+          equipos={equipos.map((equip)=>equip.titulo)}
+          registrarColaborador={registrarColaborador}
+      />
+      }
+
       <Miorg manejarEstado={manejarEstado}/>
-      {equipos.map((equip, index)=> <Equipo datos={equip} key={index} />)}
+      {
+      equipos.map((equip, index)=> <Equipo 
+      datos={equip} 
+      key={index} 
+      colaboradores={colaboradores.filter(colaborador=>colaborador.equipo===equip.titulo)}
+      />
+      )
+      }
+      <Footer/>
     </div>
   );
 }
