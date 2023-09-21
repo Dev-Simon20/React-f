@@ -3,7 +3,7 @@ import "./Formulario.css";
 import Campo from "../CampoName/Campo";
 import ListaOpc from "../ListaOpc";
 import Boton from "../Boton";
-const Formulario=()=>{
+const Formulario=(props)=>{
     const [nombre,setNombre]=useState('')
     const [puesto,setPuesto]=useState('')
     const [foto,setFoto]=useState('')
@@ -46,7 +46,9 @@ const Formulario=()=>{
             required/>
             <ListaOpc 
             valor={equipo} 
-            setEquipo={setEquipo}/>
+            setEquipo={setEquipo}
+            equipos={props.equipos}
+            />
             
             <Boton texto="Crear colaborador"/>
         </form>

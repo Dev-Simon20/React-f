@@ -54,7 +54,7 @@ function App() {
   return (
     <div>
       <Header/>
-      {mostrarForm?<Formulario/>:<></>}
+      {mostrarForm?<Formulario equipos={equipos.map((equip)=>equip.titulo)}/>:<></>}
       {/* Se manda la funcion manejar estado para que añ hacer click cambie el valor de mostrar form */}
       <Miorg manejarEstado={manejarEstado}/>
       {equipos.map((equip, index)=> <Equipo datos={equip} key={index} />)}
