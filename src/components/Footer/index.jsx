@@ -2,7 +2,20 @@
 import './Footer.css'
 
 const footer=()=>{
-    return <h1>Este es el footer</h1>
+    return <footer className='footer' style={{backgroundImage:"url(../img/tangle.png)"}}>
+        <div className='redes'>
+            <a href="">
+                <img src="../img/twitter.png" alt="twitter" />
+            </a>
+            <a href="">
+                <img src="../img/facebook.png" alt="facebook" />
+            </a>
+            <a href="">
+                <img src="../img/instagram.png" alt="instagram" />
+            </a>
+        </div>
+        <img src="../ico.png" alt="org" />
+    </footer>
 }
 
 export default footer;

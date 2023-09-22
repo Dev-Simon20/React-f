@@ -61,7 +61,7 @@ function App() {
   ]
    
   return (
-    <div>
+    <div className='mai'>
       <Header/>
       {
       mostrarForm&&<Formulario 
@@ -79,6 +79,7 @@ function App() {
       />
       )
       }
+      <div className='separar'></div>
       <Footer/>
     </div>
   );
