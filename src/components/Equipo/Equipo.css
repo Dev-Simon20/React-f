@@ -6,6 +6,7 @@
     box-sizing: border-box;
     text-align: center;
     font-size: 32px;
+    position: relative;
 
 }
 .equipo h3{
@@ -20,4 +21,9 @@
      display: flex;
      justify-content: space-evenly;
      flex-wrap: wrap;
+}
+
+.setColor{
+    position: absolute;
+    right: 50px;
 }
