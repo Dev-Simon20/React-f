@@ -1,9 +1,9 @@
 import "./Colaborador.css"
-import {AiFillCloseCircle} from "react-icons/ai"
+import {AiFillCloseCircle,AiFillHeart,AiOutlineHeart} from "react-icons/ai"
 const colaborador=(props)=>{
-  const {nombre,puesto,foto,id}=props.colaborador
+  const {nombre,puesto,foto,id,fav}=props.colaborador
   const {color}=props
-  const { eliminarColaborador }=props
+  const { eliminarColaborador,like}=props
   // const {id}=props
   
   const deleteComponente=()=>{   
@@ -18,6 +18,10 @@ const colaborador=(props)=>{
       <div  className="info">
         <h4>{nombre}</h4>
         <h5>{puesto}r</h5>
+       { fav?<AiFillHeart color="red" onClick={()=>like(id)}/>:<AiOutlineHeart onClick={()=>like(id)}/>}
+       
+
+
       </div>
    </div>
 }

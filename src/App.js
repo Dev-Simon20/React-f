@@ -6,6 +6,7 @@ import Miorg from './components/MiOrg';
 import Equipo from './components/Equipo';
 import Footer from './components/Footer';
 import {v4 as uuid} from'uuid'
+import colaborador from './components/Colaborador';
 
 
 function App() {
@@ -96,7 +97,19 @@ function App() {
       console.log('Equipo Actualizado', nuevoEquip);
       setEquipos([...equipos,{...nuevoEquip,id:uuid()}])
     }
-  
+
+
+   //Cambiar el icono de corazon
+   const like=(id)=>{
+      console.log('Like',id);
+      const colaboradoresAct=colaboradores.map((colab)=>{
+        if(colab.id===id){
+          colab.fav=!colab.fav
+        }
+        return colab;
+      })
+      setColaborador(colaboradoresAct)
+   }
    
   return (
     <div >
@@ -117,6 +130,7 @@ function App() {
       colaboradores={colaboradores.filter(colaborador=>colaborador.equipo===equip.titulo)}
       eliminarColaborador={eliminarColaborador}
       colorEquipo={colorEquipo}
+      like={like}
       />
       )
       }

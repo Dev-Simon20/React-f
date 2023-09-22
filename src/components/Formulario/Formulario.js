@@ -25,7 +25,8 @@ const Formulario=(props)=>{
             puesto:puesto,
             foto:foto,
             equipo:equipo,
-            id:uuid()
+            id:uuid(),
+            fav:true
         }
         ;
         registrarColaborador(datoEnviar);
@@ -80,6 +81,7 @@ const Formulario=(props)=>{
             sub="Ingrese el color en Hexadecimal"
             valor={coloor}  
             setValor={setColoor}
+            type={'color'}
             />
              <Boton texto="Registrar Equipo"/>
             </form>
